@@ -9,5 +9,5 @@ Estrutura se monta por um arquivo docker-compose.Ele importa as definições de 
 Para ativar, basta digitar:
 docker-compose up -d
 *instalar o docker-compose antes - 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o && /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
