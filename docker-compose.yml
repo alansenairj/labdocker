@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    image: "alanaguinaga/myfirstapp:v2.0"
+    networks:
+      labdocker:
+        ipv4_address: 10.20.0.2
+    ports:
+      - "80:80"
+    environment: 
+      - MESSAGE="Usando variavel de ambiente para mudar a mensagem do site!"  
+      
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "/srv/redis/data:/data"
+    command: "redis-server --appendonly yes"
+    networks:
+      labdocker:
+        ipv4_address: 10.20.0.3
+
+networks:
+  labdocker:
+    ipam:
+      config:
+        - subnet: 10.20.0.0/8
